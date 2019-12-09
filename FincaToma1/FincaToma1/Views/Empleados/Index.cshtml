@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FincaToma1.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IDE">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IDE">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDE">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
